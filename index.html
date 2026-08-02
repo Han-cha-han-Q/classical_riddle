@@ -315,6 +315,8 @@
       margin: 15px 0;
       font-weight: bold;
       border-radius: 4px;
+      text-align: center;
+      cursor: pointer;
     }
 
     .author-link {
@@ -411,7 +413,11 @@
       <p style="color:#888; font-size:0.8rem; margin:10px 0;">クリア画像は自由にお使いください</p>
       <p class="clear-message">あなたは"古典的"な謎を全て解き明かした！</p>
       
-      <a href="https://x.com/intent/post?text=Web%E8%AC%8E%E3%80%8CCLASSICAL%E3%80%8D%0A%0A%F0%9F%94%8D%F0%9F%93%95CLEAR!!%F0%9F%93%95%F0%9F%94%8D%0A%0A%23Web%E8%AC%8E%E3%80%80%23CLASSICAL_riddle%0A%0A%E3%83%97%E3%83%AC%E3%82%A4%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89%E3%81%8B%E3%82%89%E2%86%93%0Ahttps%3A%2F%2Fhan-cha-han-q.github.io%2Fclassical_riddle%2F%0Apic.twitter.com%2FJgUPa9ka3M&openExternalBrowser=1" target="_blank" rel="noopener noreferrer" class="share-btn">クリアポストはこちらから</a>
+      <a href="https://x.com/intent/post?text=Web%E8%AC%8E%E3%80%8CCLASSICAL%E3%80%8D%0A%0A%F0%9F%94%8D%F0%9F%92%A0CLEAR%21%21%F0%9F%92%A0%F0%9F%94%8D%0A%0A%23Web%E8%AC%8E%E3%80%80%23CLASSICAL_riddle%0A%0A%E3%83%97%E3%83%AC%E3%82%A4%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89%E3%81%8B%E3%82%89%E2%86%93%0Ahttps%3A%2F%2Fhan-cha-han-q.github.io%2Fclassical_riddle%2F%0Apic.twitter.com%2FJgUPa9ka3M" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         onclick="openXShare(event, this.href)"
+         class="share-btn">クリアポストはこちらから</a>
       
       <div style="text-align:center; color:#ccc; border-top:1px solid #333; width:100%; padding-top:20px;">
         <p>
@@ -463,6 +469,13 @@
 
     let currentStage = 1;
     let maxReachedStage = 1;
+
+    /* X(Twitter)共有リンク起動用関数 */
+    function openXShare(e, url) {
+      // 一部のアプリ内ブラウザ等で別ウィンドウ開きを確実にする処理
+      if (e) e.preventDefault();
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
 
     /* 画像拡大モーダル制御 */
     function openModal(element) {
